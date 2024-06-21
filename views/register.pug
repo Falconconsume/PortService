@@ -1,0 +1,17 @@
+extends layout
+
+block headContent
+    link(href="/styles/index.css" rel="stylesheet")
+    script(src='/dynamic/register')
+
+block content
+    div(class='register-container')
+        form(class='register-form' method='POST')
+            h2 Register
+            label(forHtml="username") Username:
+            input(type='text' id='username' name='username' required)
+
+            label(forHtml='password') Password:
+            input(type='password' id='password' name='password' required)
+
+            button(type='submit') Submit

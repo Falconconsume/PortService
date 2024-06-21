@@ -1,0 +1,11 @@
+extends layout
+
+block headContent
+    link(href="styles/index.css" rel="stylesheet")
+
+block content
+    each postItem in locals.postsList
+        ul.post-list
+            li.title= postItem.title
+            li.content= postItem.content
+

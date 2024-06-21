@@ -1,0 +1,16 @@
+extends layout
+
+block headContent
+    link(href="/styles/index.css" rel="stylesheet")
+
+block content
+    div(class='login-container')
+        form(class='login-form')
+            h2 Login
+            label(forHtml="username") Username:
+            input(type='text' id='username' name='username' required)
+
+            label(forHtml='password') Password:
+            input(type='password' id='password' name='password' required)
+
+            button(type='submit') Login

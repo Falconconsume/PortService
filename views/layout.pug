@@ -1,0 +1,24 @@
+html
+    head
+        title MicroServicePosts
+        link(href="/favicon.ico" rel="icon" type="image/x-icon")
+        block headContent
+    body
+        main
+            header(class='container')
+                h1(class='title')
+                    a(href='/pug') Posts
+                ul(class='listFunc')
+                    if !user
+                        li
+                            a(href='/auth/login') login
+                        li
+                            a(href='/auth/register') register
+                    else
+                        li
+                            a(href='/pug/create') Create Post
+                        li
+                            a(href='/auth/logout') logout
+                        console.log(user)
+            div.container
+                block content
