@@ -5,9 +5,9 @@ block headContent
     script(src='/dynamic/create-form.js' type='module')
 
 block content
-    form(class='form-creation')
-        label Title
+    form(class='form-creation' method="POST")
+        label(for='title') Title
         input(type='text' id='title' name='title' placeholder='Enter the title')
-        label Content
-        textarea(name='content' id='content' placeholder='Enter the content')
-        button(class='submit-button') Submit
+        label(for='content') Content
+        textarea(id='content' name='content' placeholder='Enter the content')
+        button(type='submit' class='submit-button') Submit

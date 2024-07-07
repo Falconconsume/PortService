@@ -7,8 +7,9 @@ const authMiddleware = require('../middleware/authMiddleware')
 const roleMiddleware = require('../middleware/roleMiddleware')
 
 
-authRouter.post('/login', userValidation, AuthController.login).get('/login', PageRenderController.renderLoginPage)
-authRouter.post('/register', userValidation, AuthController.register).get('/register', PageRenderController.renderRegisterPage)
-authRouter.get('/users', authMiddleware, roleMiddleware(['admin']), AuthController.getUsers)
+authRouter.route('/login',).post( userValidation, AuthController.login).get( PageRenderController.renderLoginPage)
+authRouter.route('/register').post(userValidation, AuthController.register).get(PageRenderController.renderRegisterPage)
+authRouter.get('/admin', authMiddleware, roleMiddleware(['admin']), AuthController.getUsers)
+authRouter.get(`/delete-user/:userId`, AuthController.deleteUser);
 authRouter.get('/logout', AuthController.logout)
 module.exports = authRouter

@@ -2,15 +2,18 @@ extends layout
 
 block headContent
     link(href="/styles/index.css" rel="stylesheet")
+    script(src='../static/dynamic/login.js' defer)
 
 block content
     div(class='login-container')
-        form(class='login-form')
+        form(class='login-form' method='POST' action='/auth/login')
             h2 Login
-            label(forHtml="username") Username:
+            if message
+                p.error-message= message
+            label(for="username") Username:
             input(type='text' id='username' name='username' required)
 
-            label(forHtml='password') Password:
+            label(for='password') Password:
             input(type='password' id='password' name='password' required)
 
             button(type='submit') Login

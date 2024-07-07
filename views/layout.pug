@@ -9,16 +9,17 @@ html
                 h1(class='title')
                     a(href='/pug') Posts
                 ul(class='listFunc')
-                    if !user
+                    if user > 0
+                        li
+                            a(href=`/pug/myPosts`) My posts
+                        li
+                            a(href='/auth/logout') logout
+                        li
+                            a(href='/auth/admin') Admin
+                    else
                         li
                             a(href='/auth/login') login
                         li
                             a(href='/auth/register') register
-                    else
-                        li
-                            a(href='/pug/create') Create Post
-                        li
-                            a(href='/auth/logout') logout
-                        console.log(user)
             div.container
                 block content

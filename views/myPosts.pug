@@ -1,0 +1,27 @@
+extends layout
+
+block headContent
+    link(href="/styles/index.css" rel="stylesheet")
+    script(src='/dynamic/comments.js' type='module')
+
+block content
+    h1 Your posts
+
+    button.btn-create
+        a(href='/pug/create') Create the post
+
+    each postItem in locals.allMyPosts
+        ul.post-list
+            li.title= postItem.title
+            li.content= postItem.content
+            if(locals.comments.length > 0)
+                h2.comment Comments:
+                each commentItem in locals.comments
+                    ul
+                        li.comment=commentItem.content
+                            button.delete-button(data-comment-id=commentItem._id)
+                                a(href=`/pug/deleteComment/${commentItem._id}`) Delete
+
+            button.delete-button(data-post-id=postItem._id)
+                a(href=`/pug/delete/${postItem._id}`) Delete
+

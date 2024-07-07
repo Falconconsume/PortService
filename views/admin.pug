@@ -1,0 +1,12 @@
+extends layout
+
+block headContent
+    link(href="/styles/index.css" rel="stylesheet")
+
+block content
+    each userItem in users
+        ul.post-list
+            li Username:
+            li.list-admin= userItem.username
+                button.delete-button(data-user-id=userItem._id)
+                    a(href=`/auth/delete-user/${userItem._id}`) Delete

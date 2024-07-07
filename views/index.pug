@@ -4,8 +4,15 @@ block headContent
     link(href="styles/index.css" rel="stylesheet")
 
 block content
-    each postItem in locals.postsList
+    each postItem in postsList
         ul.post-list
             li.title= postItem.title
             li.content= postItem.content
-
+            if postItem.comments.length > 0
+                h2 Comments:
+                ul.comment-list
+                    each commentItem in postItem.comments
+                        li.content= commentItem.content
+            if user
+                button.btn-create
+                    a(href=`/pug/comment/${postItem._id}`) Add Comment

@@ -9,6 +9,7 @@ const userSchema = object().shape({
 
 const userValidation = async (req, res, next) => {
 	try {
+		console.log('Login ', req.body)
 		await userSchema.validate(req.body)
 		return next()
 	} catch (err) {

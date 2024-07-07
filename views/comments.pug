@@ -1,0 +1,14 @@
+extends layout
+
+block headContent
+    link(href="/styles/index.css" rel="stylesheet")
+
+block content
+    .post
+        h2= locals.post.title
+        p= locals.post.content
+    .comment-section
+        form(class='form-creation' method="POST")
+            label(for='content') Your Comment:
+            textarea(id='content' name='content' placeholder='Enter the comment' required)
+            button(type='submit' class='submit-button') Submit

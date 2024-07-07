@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	submitBtn.addEventListener('click', async (e) => {
 		e.preventDefault();
 		console.log(getUsername.value, getPassword.value);
-		let response = await fetch('http://localhost:5000/auth/register', {
+		let response = await fetch('http://localhost:3000/auth/register', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json;charset=utf-8'

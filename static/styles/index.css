@@ -22,6 +22,9 @@ body {
     max-width: 1500px;
     width: 95%;
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 20px
 }
 
 header {
@@ -39,6 +42,7 @@ header {
     text-align: center;
 }
 
+/* Navigation Styles */
 .listFunc {
     list-style: none;
     padding: 0;
@@ -78,6 +82,7 @@ a {
     color: #003366;
 }
 
+/* Form Styles */
 .form-creation {
     display: flex;
     flex-direction: column;
@@ -129,19 +134,17 @@ a {
     background-color: #004c99;
 }
 
-
 .post-list {
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     padding: 10px 50px 50px 10px;
     border: 1px solid #ddd;
     margin-bottom: 10px;
     border-radius: 5px;
-
+    align-items: center;
 }
-
 
 .post-list li.title {
     font-weight: bold;
@@ -152,68 +155,57 @@ a {
 .post-list li.content {
     font-size: 1em;
     color: #666;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .sizing-posts {
     display: flex;
-    gap: 50px
+    gap: 50px;
 }
 
-
-.login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Comment Styles */
+.comment-section {
+    margin-top: 40px;
 }
 
-.login-form {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-}
-
-.login-form h2 {
-    margin-top: 0;
+h3 {
+    font-size: 20px;
     margin-bottom: 20px;
-    text-align: center;
 }
 
-.login-form label {
-    display: block;
-    margin-bottom: 5px;
+.comments {
+    margin-bottom: 20px;
 }
 
-.login-form input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.login-form button {
-    width: 100%;
+.comment {
+    margin-bottom: 10px;
     padding: 10px;
-    border: none;
+    background-color: #f9f9f9;
+    border-left: 4px solid #007BFF;
     border-radius: 4px;
-    background-color: #333;
-    color: white;
+}
+
+.comment-content {
     font-size: 16px;
-    cursor: pointer;
+    margin: 0;
 }
 
-.login-form button:hover {
-    background-color: #555;
+.comment-author {
+    font-size: 14px;
+    color: #555;
 }
 
+/* Login and Register Form Styles */
+.login-container,
 .register-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.login-form,
 .register-form {
     background-color: white;
     padding: 20px;
@@ -222,17 +214,20 @@ a {
     width: 300px;
 }
 
+.login-form h2,
 .register-form h2 {
     margin-top: 0;
     margin-bottom: 20px;
     text-align: center;
 }
 
+.login-form label,
 .register-form label {
     display: block;
     margin-bottom: 5px;
 }
 
+.login-form input,
 .register-form input {
     width: 100%;
     padding: 8px;
@@ -241,6 +236,7 @@ a {
     border-radius: 4px;
 }
 
+.login-form button,
 .register-form button {
     width: 100%;
     padding: 10px;
@@ -252,6 +248,83 @@ a {
     cursor: pointer;
 }
 
+.login-form button:hover,
 .register-form button:hover {
     background-color: #555;
+}
+
+.btn-create {
+    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #007bff;
+    border: 2px solid #007bff;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    width: 300px;
+    height: 60px;
+    margin: 0 auto;
+}
+
+.btn-create:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-create:active {
+    background-color: #004fa3;
+    border-color: #004fa3;
+}
+
+.btn-create:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}
+
+.post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:10px
+}
+
+.delete-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+.delete-button:active {
+    background-color: #a93226;
+    transform: scale(1);
+}
+
+.delete-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.5);
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+}
+
+.list-admin {
+    display: flex;
+    flex-direction: column;
+    gap:10px
 }

@@ -6,9 +6,9 @@ module.exports = (req, res, next) => {
 		next()
 	}
 	try {
-		const token = req.headers.authorization.split(' ')[1]
+		const token = req.cookies.token
 		if (!token) {
-			return next(new HttpError('User isn`t authorized', 403))
+			return res.redirect('/auth/login')
 		}
 		req.user = jwt.verify(token, secretKeyJWT)
 		next()
