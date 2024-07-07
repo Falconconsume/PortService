@@ -12,6 +12,7 @@ module.exports = (roles) => {
 		try {
 			const token = req.cookies.token;
 			if (!token) {
+				res.redirect('/auth/login')
 				throw new HttpError('User is not authorized', 403);
 			}
 
@@ -25,6 +26,7 @@ module.exports = (roles) => {
 			next();
 		} catch (err) {
 			console.error(err);
+			res.redirect('/auth/login')
 			next(new HttpError('User is not authorized', 403));
 		}
 	};
